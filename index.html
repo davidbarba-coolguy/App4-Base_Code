@@ -17,10 +17,12 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+The goal of this code is to create a basic diagnostic test for identifying whether certain symptoms are the result of Covid-19 or Influenza 
+ 
  
 Known Issues:
-blah, blah, blah, blah
+The code is not sophisticated enough to return to home page and reset results after completing the diagnostic. 
+
 Ignore this error message if you see it using the javaScript console: Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
 
 References:
@@ -106,17 +108,24 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-//etsblaishes new page with repsective id
+	
+//establishes new page with repsective id
+	
 <div class="page" id="one">
+	
 //header
+	
 	<div id="header" class="w3-container w3-flat-carrot">
+		
 //states question #
 		<h1>Question 1</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
+		
 //states question
-        <p>Are your eyes watery or itchy?</p>
+		
+        <p>Have you experienced a loss of taste?</p>
 
 //next two lines are answer chocies that call on established variables and add to counts
 	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a> 
@@ -124,30 +133,40 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
     	</div>
 </div>
+	
 //establishes new page
+	
 <div class="page" id="two">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
+		
 //asks questions
-        <p>Do you have a fever?</p>
+		
+        <p>Did the symptoms appear abruptly?</p>
+		
 //next two lines are answer chocies that call on established variables and add to counts
+		
 	<a href="#three" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a> 
 	<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black"> No </a>
 	
 	</div>
 </div>	
 //establishes new page
+	
 	<div class="page" id="three">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
+		
 //asks question on page
-        <p>Do you have a sore throat?</p>
+		
+        <p>Have you experienced any sudden extreme exhaustion?</p>
+		
 //next two lines are answer chocies that call on established variables and add to counts
 
 	<a href="#four" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a> 
@@ -155,15 +174,20 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	</div>
 </div>	
+	
 //establihes final page with question
+	
 	<div class="page" id="four"> 
 	<div id="header" class="w3-container w3-flat-carrot"> 
 		<h1>Question 4</h1>
 	</div>
 	
     	<div id="content" class="w3-container">
+		
 //asks question on page
-        <p>Are your symptoms seasonal or chronic?</p>
+		
+        <p>Have you experienced any shortness of breath?</p>
+		
 //next two lines are answer chocies that call on established variables and add to counts
 
 	<a href="#five" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a> 
@@ -171,17 +195,24 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	</div>
 </div>	
+	
 //estbalishes results page
+	
 	<div class="page" id="five">
 	<div id="header" class="w3-container w3-flat-carrot">
+		
 //creates tite
 		<h1>Results</h1>
 	</div>
 
     	<div id="content" class="w3-container">
+		
 //button that runs displayresults function when pressed
+		
 	<a href="#five" onclick="displayResults();" class="w3-btn w3-black"> Calculate Results </a> 
+		
 //calls on function to display results here
+		
       	<p id="results"></p>
 
 
