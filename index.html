@@ -37,14 +37,34 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </head> 
 
 <script>
+//establishes variables to come and starts them at 0
+	var allergy_count = 0;
+	var cold_count = 0;
+//next two functions add 1 count per button click to repective diseases count
+        function allergyAdd(){
+            allergy_count = allergy_count + 1;
+        }
 
-	//YOUR JAVASCRIPT GOES HERE
+        function coldAdd(){
+            cold_count = cold_count + 1;
+        }
+//function to display reuslt son reuslts page
+       function displayResults() {
+//calculate percentages
+	var total = allergy_count + cold_count;
+	var allergyPercent = (allergy_count / total) * 100;
+	var coldPercent = (cold_count / total) * 100
+	
+//get paragraph element
+	var resultText = document.getElementById("results");
+	
+//update content of paragraph
+	resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent;        }
+       
+	 
 
 </script>	
 
-
-<!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
-<style>	
 .body {
      margin: 0em;
 }
@@ -68,8 +88,109 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <body>
 	
-	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
+	</style>
+
+<body>
+//intropage below  
+
+//header for page
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1>
+</div>
+
+<div id="content" class="w3-container">
+//next line states purpose of app on app
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+//next line is button to go to next page
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+//disclaimer
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+//etsblaishes new page with repsective id
+<div class="page" id="one">
+	//header
+	<div id="header" class="w3-container w3-flat-carrot">
+	//states question #
+		<h1>Question 1</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+	//states question
+        <p>Are your eyes watery or itchy?</p>
+
+//next two lines are answer chocies that call on established variables and add to counts
+	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a> 
+	<a href="#two" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
+
+    	</div>
+</div>
+//establishes new page
+<div class="page" id="two">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+//asks questions
+        <p>Do you have a fever?</p>
+//next two lines are answer chocies that call on established variables and add to counts
+	<a href="#three" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a> 
+	<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black"> No </a>
+	
+	</div>
+</div>	
+//establishes new page
+	<div class="page" id="three">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+//asks question on page
+        <p>Do you have a sore throat?</p>
+//next two lines are answer chocies that call on established variables and add to counts
+
+	<a href="#four" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a> 
+	<a href="#four" onclick="allergyAdd();" class="w3-btn w3-black"> No </a>
+
+	</div>
+</div>	
+//establihes final page with question
+	<div class="page" id="four"> 
+	<div id="header" class="w3-container w3-flat-carrot"> 
+		<h1>Question 4</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+//asks question on page
+        <p>Are your symptoms seasonal or chronic?</p>
+//next two lines are answer chocies that call on established variables and add to counts
+
+	<a href="#five" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a> 
+	<a href="#five" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
+
+	</div>
+</div>	
+//estbalishes results page
+	<div class="page" id="five">
+	<div id="header" class="w3-container w3-flat-carrot">
+//creates tite
+		<h1>Results</h1>
+	</div>
+
+    	<div id="content" class="w3-container">
+//button that runs displayresults function when pressed
+	<a href="#five" onclick="displayResults();" class="w3-btn w3-black"> Calculate Results </a> 
+//calls on function to display results here
+      	<p id="results"></p>
+
+
+	</div>
+</div>	
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
 	
 </body>
 </html>
